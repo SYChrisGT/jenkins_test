@@ -20,4 +20,16 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            echo 'One way or another, I have finished'
+            sh 'rm out'
+        }
+        success {
+            echo 'I succeeeded!'
+        }
+        failure {
+            echo 'I failed :('
+        }
+    }
 }
