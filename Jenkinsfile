@@ -5,13 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'g++ -std=c++11 helloworld.cpp -o out'
+                sh 'g++ -std=c++11 myGtest.cpp -lgtest -lpthread -o myGtest.out'
+                //sh 'g++ -std=c++11 helloworld.cpp -o out'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh './out'
+                sh './myGtest.out'
             }
         }
         stage('Deploy') {
@@ -23,7 +24,7 @@ pipeline {
     post {
         always {
             echo 'One way or another, I have finished'
-            sh 'rm out'
+            sh 'rm myGtest.out'
         }
         success {
             echo 'I succeeeded!'
