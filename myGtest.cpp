@@ -1,8 +1,11 @@
 #include <iostream>
 #include "gtest/gtest.h"
 
-TEST(SquareRootTest, PositiveNos) {
-    EXPECT_EQ(1,2);
+TEST(myGtest, test1) {
+    EXPECT_EQ(3,1);
+}
+TEST(myGtest, test2) {
+    EXPECT_EQ(2,2);
 }
 
 
